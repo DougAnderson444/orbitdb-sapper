@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@projectstorm/react-diagrams": "^6.0.1-beta.5"
+  }
+}
