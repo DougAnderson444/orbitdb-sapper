@@ -1,6 +1,7 @@
 <script>
   // svelte stuff
   import { onMount } from "svelte";
+  import Orbitdb from "./Orbitdb.svelte";
 
   //stores
   import {
@@ -43,7 +44,9 @@
     $nodeAgentVersion = agentVersion;
     $nodeProtocolVersion = protocolVersion;
 
-    for await (const { cid } of $ipfsNode.add("Saved some data to IPFS, cool!")) {
+    for await (const { cid } of $ipfsNode.add(
+      "Saved some data to IPFS, cool!"
+    )) {
       $rootHash = cid.toString();
 
       //ipns --> Slow AF, unuseable
@@ -95,3 +98,4 @@
     </div>
   {/if}
 </div>
+<Orbitdb {IPFS} />
